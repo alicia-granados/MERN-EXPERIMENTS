@@ -2,6 +2,12 @@ import {useState, useEffect} from 'react';
 
 const Formulario = () => {
   const [nombre,setNombre]= useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("enviando formulario")
+  }
+
   return (
     <div className = "md:w-1/2 lg:w-2/5 px-12">
 
@@ -12,7 +18,10 @@ const Formulario = () => {
           <span className = "text-indigo-600 font-bold">Administralos</span>
         </p>
 
-        <form className = " bg-white shadow-md rounded-lg py-10 px-5 mb-10">
+        <form 
+          onSubmit={handleSubmit}
+          className = " bg-white shadow-md rounded-lg py-10 px-5 mb-10"
+        >
           <div>
             <label hmtlFor = "mascota" className = "block text-gray-700 uppercase font-bold">
               Nombre Mascota
