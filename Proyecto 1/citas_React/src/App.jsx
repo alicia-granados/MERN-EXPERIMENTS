@@ -5,20 +5,15 @@ import ListadoPacientes from "./components/ListadoPacientes";
 
 function App() {
   const [pacientes,setPacientes]= useState([]);  
-  const imprime2mas2 = () => {
-    console.log(2+2)
-  }
 
   return (
     <div className= "container mt-20">
-      <Header
-        numeros = {1}
-        isAdmin={false}
-        fn ={imprime2mas2}
-  
-      />
+      <Header/>
       <div className="mt-12 md:flex">
-        <Formulario/>
+        <Formulario
+          pacientes={pacientes}
+          setPacientes={setPacientes}
+        />
         <ListadoPacientes/>
       </div>
 
