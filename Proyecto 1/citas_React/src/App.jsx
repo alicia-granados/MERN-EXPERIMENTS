@@ -5,7 +5,7 @@ import ListadoPacientes from "./components/ListadoPacientes";
 
 function App() {
   const [pacientes,setPacientes]= useState([]);  
-  const[pacinte,setPaciente] = useState({})
+  const[paciente,setPaciente] = useState({})
 
   return (
     <div className= "container mt-20">
@@ -14,6 +14,7 @@ function App() {
         <Formulario
           pacientes={pacientes}
           setPacientes={setPacientes}
+          paciente={paciente}
         />
         <ListadoPacientes
           pacientes={pacientes}

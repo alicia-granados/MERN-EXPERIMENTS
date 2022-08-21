@@ -1,5 +1,14 @@
+import { useEffect} from 'react';
 import Paciente from "./Paciente"
+
 const ListadoPacientes = ({pacientes,setPaciente}) => {
+
+  useEffect(() => {
+    if( pacientes.length > 0){
+      console.log("nuevo paciente")
+    }
+  }, [pacientes])
+  
 
   return (
     <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll px-12">
