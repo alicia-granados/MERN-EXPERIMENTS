@@ -40,9 +40,24 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
       email,
       fecha,
       sintomas,
-      id: generarId()
     }
-    setPacientes([...pacientes, objetoPaciente])
+
+    if (paciente.id){
+      // Editando el registro
+      objetoPaciente.id = paciente.id
+
+      const pacientesActualizados = pacientes.map(pacienteState  => pacienteState.id === paciente.id ?
+      objetoPaciente : pacienteState)
+
+      setPacientes(pacientesActualizados)
+
+    }else{
+      //Nuevo registro
+      objetoPaciente.id = generarId();
+      setPacientes([...pacientes, objetoPaciente])
+    }
+
+
 
     //Reiniciar el formulario
     setNombre('')
@@ -104,7 +119,7 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
             
             <input
               id = "email"
-              type = " email" 
+              type = "email" 
               placeholder = "Email Contacto Propietario"
               className = "border-2 w-full p-2 mt-2 placeholderbg-gray-400 rounded-md"
               value={email}
