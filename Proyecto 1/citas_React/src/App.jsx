@@ -4,8 +4,14 @@ import Header from "./components/Header"
 import ListadoPacientes from "./components/ListadoPacientes";
 
 function App() {
+
   const [pacientes,setPacientes]= useState([]);  
-  const[paciente,setPaciente] = useState({})
+  const[paciente,setPaciente] = useState({});
+
+  const eliminarPaciente = id  => {
+    const pacienteActualizados = pacientes.filter( paciente => paciente.id !==  id );
+    setPacientes(pacienteActualizados)
+  }
 
   return (
     <div className= "container mt-20">
@@ -15,10 +21,12 @@ function App() {
           pacientes={pacientes}
           setPacientes={setPacientes}
           paciente={paciente}
+          setPaciente={setPaciente}
         />
         <ListadoPacientes
           pacientes={pacientes}
           setPaciente={setPaciente}
+          eliminarPaciente={eliminarPaciente}
         />
       </div>
 
