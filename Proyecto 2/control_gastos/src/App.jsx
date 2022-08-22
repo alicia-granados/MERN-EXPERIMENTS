@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import Header from './components/Header'
+import Modal from './components/Modal';
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
 
 function App() {
 
   const [presupuesto,setPresupuesto] = useState(0);
   const [isValidPresupuesto, setIsValidPresupuesto]= useState(false);
-  const [modal,setmodal]= useState(false);
+  const [modal,setModal]= useState(false);
 
   const handleNuevoGasto = () =>{
-    setmodal(true)
+    setModal(true)
   }
   return (
     <div className="App">
@@ -28,8 +29,8 @@ function App() {
           />
         </div>
       ): null }
-      
-      {modal && <p>desde mdal</p>}
+
+      {modal && <Modal setModal={setModal} />}
     </div>
   )
 }
