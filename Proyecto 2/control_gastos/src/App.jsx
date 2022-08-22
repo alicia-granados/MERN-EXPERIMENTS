@@ -6,7 +6,11 @@ function App() {
 
   const [presupuesto,setPresupuesto] = useState(0);
   const [isValidPresupuesto, setIsValidPresupuesto]= useState(false);
+  const [modal,setmodal]= useState(false);
 
+  const handleNuevoGasto = () =>{
+    setmodal(true)
+  }
   return (
     <div className="App">
       <Header
@@ -20,9 +24,12 @@ function App() {
           <img
             src={IconoNuevoGasto} 
             alt='icono nuevo gasto'
+            onClick={handleNuevoGasto}
           />
         </div>
       ): null }
+      
+      {modal && <p>desde mdal</p>}
     </div>
   )
 }
