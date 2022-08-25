@@ -94,6 +94,7 @@ function App() {
         setPresupuesto={setPresupuesto}
         isValidPresupuesto={isValidPresupuesto}
         setIsValidPresupuesto={setIsValidPresupuesto}
+        setGatos={setGatos}
       />
       {isValidPresupuesto ? (
         <>
