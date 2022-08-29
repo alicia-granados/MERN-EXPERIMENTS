@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import useSelectMoneda from '../hooks/useSelectMoneda'
 
 const InputSubmit = styled.input`
     background-color: #9497ff;
@@ -17,11 +18,13 @@ const InputSubmit = styled.input`
     }
 `
 const Formulario = () => {
-  return (
-    <form>
-        <InputSubmit type='submit' value="Cotizar"/>
-    </form>
-  )
+    const [SelectMonedas] = useSelectMoneda() 
+    SelectMonedas()
+    return (
+        <form>
+            <InputSubmit type='submit' value="Cotizar"/>
+        </form>
+    )
 }
 
 export default Formulario
