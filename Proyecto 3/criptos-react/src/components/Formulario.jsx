@@ -25,7 +25,8 @@ const Formulario = () => {
     const [criptos, setCriptos] = useState([])
 
     const [moneda, SelectMonedas] = useSelectMoneda("Elige tu moneda", monedas)
-    
+    const [criptomoneda, SelectCriptomonedas] = useSelectMoneda("Elige tu Criptomoneda", criptos)
+
     useEffect(() => {
         const consultarAPI= async ()=>{
             const url = 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD'
@@ -46,6 +47,7 @@ const Formulario = () => {
     return (
         <form>
             <SelectMonedas/>
+            <SelectCriptomonedas/>
             <InputSubmit type='submit' value="Cotizar"/>
         </form>
     )
