@@ -10,10 +10,14 @@ const Formulario = () => {
             Yup.string().min(3, 'El nombre es muy corto')
             .max(20,'El nombre es muy largo')
             .required('El nombre del cliente es obligatorio'),
-        empresa: Yup.string().required('La empresa  del cliente es obligatorio'),
-        email: '',
-        telefono:'',
-        notas:''
+        empresa: Yup.string().required('El nombre de la empresa es obligatorio'),
+        email: 
+            Yup.string().email('Email no válido').required('El email es obligatorio'),
+        telefono: 
+            Yup.number()
+            .integer('Número no válido')
+            .positive('Número no válido')
+            .typeError('El número no es válido'),
     })
 
     const handleSubmit = (valores) => {
@@ -70,6 +74,11 @@ const Formulario = () => {
                                     type='text'
                                     className='mt-2 block w-full bg-gray-50'
                                 />
+                                {errors.empresa && touched.empresa ? ( 
+                                    <Alerta>
+                                        {errors.empresa}
+                                    </Alerta>
+                                ):null}
                             </div>
                             <div className='mb-4 '>
                                 <label
@@ -83,6 +92,11 @@ const Formulario = () => {
                                     type='email'
                                     className='mt-2 block w-full bg-gray-50'
                                 />
+                                {errors.email && touched.email ? ( 
+                                    <Alerta>
+                                        {errors.email}
+                                    </Alerta>
+                                ):null}
                             </div>
                             <div className='mb-4 '>
                                 <label
@@ -96,6 +110,11 @@ const Formulario = () => {
                                     type='tel'
                                     className='mt-2 block w-full bg-gray-50'
                                 />
+                                {errors.telefono && touched.telefono ? ( 
+                                    <Alerta>
+                                        {errors.telefono}
+                                    </Alerta>
+                                ):null}
                             </div>
                             <div className='mb-4 '>
                                 <label
