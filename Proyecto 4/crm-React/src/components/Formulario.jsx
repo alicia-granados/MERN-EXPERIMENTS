@@ -40,7 +40,7 @@ const Formulario = ({cliente}) => {
 
     return (
         <div className='bg-white mt-10 px-5 py-10 rounded-md shadow-md md:w-3/4 mx-auto'>
-            <h1 className='text-gray-600 font-bold text-xl uppercase text-center'>Agregar Cliente</h1>
+            <h1 className='text-gray-600 font-bold text-xl uppercase text-center'>{cliente?.nombre ? 'Editar Cliente' : 'Agregar Cliente'}</h1>
 
             <Formik
                 initialValues={{
@@ -148,7 +148,7 @@ const Formulario = ({cliente}) => {
                             </div>
 
                             <input 
-                                type='submit'  value='Agregar Cliente'
+                                type='submit'  value={cliente?.id ? 'Editar Cliente' : 'Agregar Cliente'}
                                 className='mt-5 w-full bg-blue-800 p-3 text-white font-bold text-lg'
                             />
                         </Form>
