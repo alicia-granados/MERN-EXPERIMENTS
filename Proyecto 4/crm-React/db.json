@@ -1,28 +1,3 @@
 {
-  "clientes": [
-    {
-      "nombre": "sxasasssvdvsdd",
-      "empresa": "asxas",
-      "email": "aaa@cma.com",
-      "telefono": "844416054",
-      "notas": "sdcsdvsdv",
-      "id": 1
-    },
-    {
-      "nombre": "sxasas",
-      "empresa": "asxas",
-      "email": "aaa@cma.com",
-      "telefono": "844416054",
-      "notas": "s\nuilidcsdc",
-      "id": 2
-    },
-    {
-      "nombre": "alicia",
-      "empresa": "jajajaa",
-      "email": "alicia@aicia.com",
-      "telefono": "8444524",
-      "notas": "",
-      "id": 3
-    }
-  ]
+  "clientes": []
 }
