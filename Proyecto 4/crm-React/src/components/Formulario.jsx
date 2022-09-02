@@ -20,7 +20,7 @@ const Formulario = ({cliente}) => {
             .positive('Número no válido')
             .typeError('El número no es válido'),
     })
-
+    console.log(cliente)
     const handleSubmit = async (valores) => {
         try{
             const url = 'http://localhost:4000/clientes'
@@ -44,12 +44,13 @@ const Formulario = ({cliente}) => {
 
             <Formik
                 initialValues={{
-                    nombre:'',
-                    empresa:'',
-                    email: '',
-                    telefono:'',
-                    notas:''
+                    nombre: cliente?.nombre ?? '',
+                    empresa: cliente?.empresa ?? '',
+                    email: cliente?.email ?? '',
+                    telefono: cliente?.telefono ?? '',
+                    notas: cliente?.notas ?? ''
                 }}
+                enableReinitialize={true}
                 onSubmit= { async (values,{resetForm}) =>{
                     await handleSubmit(values)
                     resetForm()
@@ -155,6 +156,9 @@ const Formulario = ({cliente}) => {
             </Formik>    
         </div>
     )
+}
+Formulario.defaultProps= {
+    cliente: {}
 }
 
 export default Formulario
