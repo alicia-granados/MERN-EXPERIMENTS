@@ -21,17 +21,33 @@ const Formulario = ({cliente,cargando}) => {
             .positive('Número no válido')
             .typeError('El número no es válido'),
     })
-    console.log(cliente)
+
     const handleSubmit = async (valores) => {
         try{
-            const url = 'http://localhost:4000/clientes'
-            const respuesta = await fetch(url,{
-                method:'POST',
-                body: JSON.stringify(valores),
-                headers:{
-                    'Content-Type': 'application/json'
-                }
-            })
+            let respuesta
+            if(cliente.id){
+                //editando registro
+                const url = `http://localhost:4000/clientes/${cliente.id}`
+                respuesta = await fetch(url,{
+                    method:'PUT',
+                    body: JSON.stringify(valores),
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                })
+
+
+            }else{
+                //NUevo registro
+                const url = 'http://localhost:4000/clientes'
+                respuesta = await fetch(url,{
+                    method:'POST',
+                    body: JSON.stringify(valores),
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                })
+            }
             const resultado = await respuesta.json()
             navigate('/clientes')
         }catch(error){
