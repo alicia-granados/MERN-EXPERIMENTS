@@ -6,18 +6,22 @@ const VerCliente = () => {
 
     const {nombre,empresa,email,telefono,notas} = cliente
 
+    const [cargando,setCargando] = useState(false)
+
     const {id}= useParams()
 
     useEffect(()=>{
+        setCargando(!cargando)
         const obtenerClienteAPI = async () => {
             try{
                 const url = `http://localhost:4000/clientes/${id}`
                 const respuesta = await fetch(url)
                 const resultado = await respuesta.json()
                 setCliente(resultado)
-              }catch(error){
+            }catch(error){
                 console.log(error)
-              }
+            }
+            setCargando(false)
         }
         obtenerClienteAPI()
     },[])
