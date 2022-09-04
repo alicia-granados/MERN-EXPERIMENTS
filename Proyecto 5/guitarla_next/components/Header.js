@@ -6,21 +6,23 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className='contenedor'>
-        <Link href='/'>
-            <Image 
-                src='/img/logo.svg'
-                width={400} 
-                height={100}
-                alt='Imagen logo'
-            />
-        </Link>
+        <div className={styles.barra}>
+            <Link href='/'>
+                <Image 
+                    src='/img/logo.svg'
+                    width={400} 
+                    height={100}
+                    alt='Imagen logo'
+                />
+            </Link>
 
-        <nav className={styles.navegacion}>
-            <Link href= '/'>Inicio</Link>
-            <Link href= '/nosotros'>Nosotros</Link>
-            <Link href= '/blog'>Blog</Link>
-            <Link href= '/tienda'>tienda</Link>
-        </nav>
+            <nav className={styles.navegacion}>
+                <Link href= '/'>Inicio</Link>
+                <Link href= '/nosotros'>Nosotros</Link>
+                <Link href= '/blog'>Blog</Link>
+                <Link href= '/tienda'>tienda</Link>
+            </nav>
+        </div>
       </div>
     </header>
   )
