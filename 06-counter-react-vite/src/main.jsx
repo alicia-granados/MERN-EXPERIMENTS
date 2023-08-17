@@ -1,6 +1,9 @@
 import React from 'react'
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import HelloWorldApp from './HelloWorldApp';
 
-const saludo = <h1>Hola mundo</h1>;
-const divRoot = document.querySelector('#root');
-render ( saludo , divRoot);
+ReactDOM.createRoot( document.getElementById('root') ).render(
+    <React.StrictMode>
+        <HelloWorldApp />
+    </React.StrictMode>
+);
