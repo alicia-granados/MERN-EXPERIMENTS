@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const newMessage= 'Fernando';
 const newMessage2 ={
     message : 'hola mundo',
@@ -6,7 +8,7 @@ const newMessage2 ={
 const saludo = () =>{
     return 'Hola como estas'
 }
-const FirstApp = ( {title = 'Hola soy fernando'} ) => {
+const FirstApp = ( {title = 'Hola soy fernando'} , subtitle) => {
     //console.log(props)
     return (
         <>
@@ -21,3 +23,8 @@ const FirstApp = ( {title = 'Hola soy fernando'} ) => {
 }
 
 export default FirstApp
+
+FirstApp.propTypes ={
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.number.isRequired
+}
