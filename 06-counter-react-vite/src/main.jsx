@@ -1,10 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import { render } from 'react-dom';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const saludo = <h1>Hola mundo</h1>;
+const divRoot = document.querySelector('#root');
+render ( saludo , divRoot);
