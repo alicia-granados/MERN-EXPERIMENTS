@@ -3,12 +3,23 @@ import { useState } from "react";
 const GifExpertApp = () => {
     const [categories, setCategories] = useState(['One Punch']);
     //console.log(categories);
+
+    const onAddCategory = () => {
+        //categories.push('valorant')//muta arreglo
+        
+        // Solucion - AGREGAR
+        setCategories([...categories, 'valorant'])
+        //setCategories( cat => [...cat, 'valorant'])
+    }
   return (
     <>
         { /*titulo*/ }
         <h1>GifExpertApp</h1>
 
         { /*input*/ }
+        <button onClick={onAddCategory}>
+            Agregar
+        </button>
         <ol>
             {categories.map(category =>{
                 return <li key={category} > {category}</li>
