@@ -19,13 +19,13 @@ const CounterApp = ({value}) => {
       <h2> {counter} </h2>
 
         <button onClick={  handleAdd }>
-            +1
+          +1
         </button>
         <button onClick={  handleSubstract }>
-            -1
+          -1
         </button>
-        <button onClick={  handleReset }>
-            -1
+        <button aria-label="btn-reset" onClick={  handleReset }>
+          Reset
         </button>
     </>
   )
