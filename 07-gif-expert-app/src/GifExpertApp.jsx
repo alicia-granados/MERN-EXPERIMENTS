@@ -9,6 +9,7 @@ const GifExpertApp = () => {
         //categories.push('valorant')//muta arreglo
         
         // Solucion - AGREGAR
+        if(categories.includes(newCategory)) return;
         setCategories([newCategory, ...categories])
         //setCategories( cat => [...cat, 'valorant'])
     }
