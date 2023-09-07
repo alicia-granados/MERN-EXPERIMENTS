@@ -1,13 +1,11 @@
+import { getGifs } from "../helpers/getGifs";
+
 const GifGrid = ({category}) => {
-    const gifs= [1,2,3]
+
+  getGifs(category);
   return (
     <>
       <h3>{category}</h3>
-      { 
-        gifs.map(gif => (
-            <p>{gif}</p>
-        ))
-      }
     </>
   )
 }
