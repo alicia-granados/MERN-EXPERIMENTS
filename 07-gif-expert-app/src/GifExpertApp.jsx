@@ -5,11 +5,11 @@ const GifExpertApp = () => {
     const [categories, setCategories] = useState(['One Punch']);
     //console.log(categories);
 
-    const onAddCategory = () => {
+    const onAddCategory = (newCategory) => {
         //categories.push('valorant')//muta arreglo
         
         // Solucion - AGREGAR
-        setCategories([...categories, 'valorant'])
+        setCategories([newCategory, ...categories])
         //setCategories( cat => [...cat, 'valorant'])
     }
   return (
@@ -18,7 +18,10 @@ const GifExpertApp = () => {
         <h1>GifExpertApp</h1>
 
         { /*input*/ }
-        <AddCategory setCategories={setCategories}/>
+        <AddCategory 
+            //setCategories={setCategories}
+            onNewCategory = {value => onAddCategory(value)}
+        />
 
         <ol>
             {categories.map(category =>{
